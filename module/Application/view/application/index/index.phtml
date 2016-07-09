@@ -35,11 +35,11 @@
         <div class="thumbnail">
             <img src="https://lh3.googleusercontent.com/proxy/yquQ82aNyWfKl2_NXCIIzZI443g3ZR-9HoSKVITCnE4w2ZVjBQWizFtURFLoxhv4ZBtyIMPNd4nfPYFLz4HU4A=w426-h240-n" alt="">
             <div class="caption">
-                <h4 class="pull-right"><?=$d->status; ?></h4>
-                <h4><a href="detail"><small><?php echo substr($d->name,0,40); ?></small></a>
+                <h4 class="pull-right"><?=//$d->status; ?></h4>
+                <h4><a href="detail"><small><?php echo substr($d->name,0,35); ?></small></a>
                 </h4>
-                <p><?=substr($d->description,0,40); ?></p>
-                <p><?=substr($d->tag,0,40); ?></p>
+                <p><?=substr($d->description,0,35); ?></p>
+                <p><smaller><?=substr($d->tag,0,40); ?></smaller></p>
             </div>
             <div class="ratings">
                 <p class="pull-right"></p>
