@@ -33,7 +33,7 @@
 <?php foreach ($data as $d) : ?>
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
-            <img src="https://lh3.googleusercontent.com/proxy/yquQ82aNyWfKl2_NXCIIzZI443g3ZR-9HoSKVITCnE4w2ZVjBQWizFtURFLoxhv4ZBtyIMPNd4nfPYFLz4HU4A=w426-h240-n" alt="">
+            <img src="<?=$d->img;?>" alt="">
             <div class="caption">
                 <h4 class="pull-right"></h4>
                 <h4><a href="detail"><small><?php echo substr($d->name,0,35); ?></small></a>
