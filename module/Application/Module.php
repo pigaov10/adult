@@ -11,6 +11,11 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Application\Model\Video;
+use Application\Model\VideoTable;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
+
 
 class Module
 {
@@ -36,4 +41,26 @@ class Module
             ),
         );
     }
+
+    public function getServiceConfig() {
+          return array(
+          'factories' => array(
+          'Application\Model\VideoTable' =>   function($sm) {
+          $tableGateway = $sm->get('VideoTableGateway');
+          $table = new VideoTable($tableGateway);
+          return $table;
+          },
+          'VideoTableGateway' => function ($sm) {
+          $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+          $resultSetPrototype = new ResultSet();
+          $resultSetPrototype->setArrayObjectPrototype(new Video());
+          return new TableGateway('video', $dbAdapter, null, $resultSetPrototype);
+          },
+          ),
+          );
+      }
+
+
+
+
 }
