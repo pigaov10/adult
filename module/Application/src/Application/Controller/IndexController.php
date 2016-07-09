@@ -4,8 +4,6 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Application\Model\Video;
-use Application\Model\VideoTable;
 
 class IndexController extends AbstractActionController
 {
