@@ -19,7 +19,7 @@ class IndexController extends AbstractActionController
   	}
   	public function indexAction(){
   		return new ViewModel(array(
-  				'videos' => $this->getVideoTable()->fetchAll(),
+  				'data' => $this->getVideoTable()->fetchAll(),
   		));
   	}
 
