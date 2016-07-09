@@ -54,7 +54,7 @@ class Module
           $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
           $resultSetPrototype = new ResultSet();
           $resultSetPrototype->setArrayObjectPrototype(new Video());
-          return new TableGateway('video', $dbAdapter, null, $resultSetPrototype);
+          return new TableGateway('videssso', $dbAdapter, null, $resultSetPrototype);
           },
           ),
           );
