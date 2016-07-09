@@ -30,6 +30,7 @@
 
 </div>
 <?php foreach ($videos as $video) : ?>
+  <?php echo var_dump($video); ?>
 <?php echo $this->escapeHtml($video->name); ?>
 <?php endforeach; ?>
 
