@@ -29,7 +29,10 @@
     </div>
 
 </div>
-<?php print_r($videos); ?>
+<?php foreach ($videos as $video) : ?>
+<?php echo $this->escapeHtml($video->name); ?>
+<?php endforeach; ?>
+
 <div class="row">
 
     <div class="col-sm-4 col-lg-4 col-md-4">
