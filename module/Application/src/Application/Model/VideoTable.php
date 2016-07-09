@@ -11,8 +11,6 @@ class VideoTable
     public function fetchAll()
     {
         $resultSet = $this->tableGateway->select();
-        $resultSet->buffer();
-        $resultSet->next();
         return $resultSet;
     }
 }
