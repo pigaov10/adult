@@ -16,7 +16,7 @@ class VideoTable
     }
     public function fetchById($id)
     {
-        $resultSet = $this->tableGateway->select()->where(array('name' => $id));
+        $resultSet = $this->tableGateway->select();
         return $resultSet;
     }
 }
