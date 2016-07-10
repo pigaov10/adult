@@ -24,9 +24,9 @@ class IndexController extends AbstractActionController
       // grab the paginator from the AlbumTable
       $paginator = $this->getVideoTable()->fetchAll(true);
       // set the current page to what has been passed in query string, or to 1 if none set
-      $paginator->setCurrentPageNumber((int) $this->params()->fromQuery('page', 1));
-      // set the number of items per page to 10
-      $paginator->setItemCountPerPage(10);
+      // $paginator->setCurrentPageNumber((int) $this->params()->fromQuery('page', 1));
+      // // set the number of items per page to 10
+      // $paginator->setItemCountPerPage(10);
 
       return new ViewModel(array(
           'paginator' => $paginator
