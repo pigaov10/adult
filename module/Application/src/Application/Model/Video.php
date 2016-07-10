@@ -18,5 +18,6 @@ class Video{
 		$this->site = (isset($data['site'])) ? $data['site'] : null;
 		$this->status = (isset($data['status'])) ? $data['status'] : null;
 		$this->img = (isset($data['img'])) ? $data['img'] : null;
+		$this->embed = (isset($data['embed'])) ? $data['embed'] : null;
 	}
 }
