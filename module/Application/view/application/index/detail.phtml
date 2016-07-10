@@ -28,10 +28,26 @@
      </div>
 
  </div>
- <!-- /.row -->
-<?php foreach ($data as $d) : ?>
-  <?php echo $d->embed; ?>
-<?php foreach; ?>
+ <?php foreach ($data as $d) : ?>
+     <div class="col-sm-4 col-lg-4 col-md-4">
+         <div class="thumbnail">
+             <img src="<?=$d->img;?>" alt="">
+             <div class="caption">
+                 <h4><a href="application/index/detail/<?php echo substr($d->name,0,40); ?>"><small><?php echo substr($d->name,0,40); ?></small></a></h4>
+             </div>
+             <div class="ratings">
+                 <p class="pull-right"></p>
+                 <p>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                 </p>
+             </div>
+         </div>
+     </div>
+ <?php endforeach; ?>
  <!-- Related Projects Row -->
  <div class="row">
 
