@@ -18,7 +18,7 @@ class VideoTable
     {
         $where = new Where();
         $where->equalTo('name', $id);
-        $resultSet = $this->tableGateway->select($where);
+        $resultSet = $this->tableGateway->select();
         return $resultSet;
     }
 }
