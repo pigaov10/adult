@@ -25,7 +25,10 @@ class IndexController extends AbstractActionController
 
     public function detailAction()
     {
-        return new ViewModel();
+      echo "<pre>"; print_r($this->params);
+      return new ViewModel(array(
+  				'data' => $this->getVideoTable()->fetchAll(),
+  		));
     }
 
 
