@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import re	
 from urllib import urlencode
 import urllib
 from urllib2 import HTTPCookieProcessor
@@ -9,6 +10,7 @@ from urllib2 import Request
 from urllib2 import build_opener
 from bs4 import BeautifulSoup
 from datetime import datetime
+import MySQLdb
 
 default_header = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0',}
 
@@ -30,6 +32,7 @@ default_headers = {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB
                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                    'Referer': None}
 
+conn  = MySQLdb.connect("localhost","root","29367253","tocadasnovinhas" )
 for site in sites:
     sock = urllib.urlopen(site)
     htmlSource = sock.read()
@@ -37,8 +40,14 @@ for site in sites:
     divTag = soup.findAll("div",{"class": "thumb-block"})
     for tag in divTag:
         ancoras = tag.findAll("a")
-        # thumb = tag.findAll("img")
-        for ancora in ancoras:
+	image = tag.findChildren()[2]
+	#print type(image)
+	imagem = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', str(image))
+	print imagem
+	print "-----------------"
+        #thumb = tag.findAll("img",{"class":"hovered"})
+        #print thumb
+	for ancora in ancoras:
             link = ancora.get('href')
             xvideos = sites[0].split('/')[2]
             siteDetalhes = ''.join([xvideos,link])
@@ -48,4 +57,15 @@ for site in sites:
             divDetalhes = soup.findAll("div",{"id": "tabEmbed"})
             for detalhes in divDetalhes:
                 inputs = detalhes.find("input")
-                print inputs.get('value')
+                #print inputs.get('value')
+               
+            dados = soup.findAll("div",{"id": "main"})
+            for dado in dados:
+                h2 = dado.find("h2")
+		print imagem[0]                
+                x = conn.cursor()
+		try:
+   			x.execute("""INSERT INTO video (name,description,img) VALUES (%s,%s,%s)""",(h2.contents[0],'descricao',imagem[0]))
+   			conn.commit()
+		except:
+   			conn.rollback()
