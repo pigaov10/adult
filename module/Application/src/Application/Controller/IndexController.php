@@ -25,7 +25,7 @@ class IndexController extends AbstractActionController
 
     public function detailAction()
     {
-        echo "<pre>"; var_dump($this->params['id']);
+        echo "<pre>"; var_dump($this->params()->fromRoute('id'));
         return new ViewModel();
     }
 
