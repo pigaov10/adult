@@ -36,13 +36,23 @@ class IndexController extends AbstractActionController
     public function detailAction()
     {
         return new ViewModel(array(
-                  'data'=> $this->getVideoTable()->fetchById($this->params()->fromRoute('id'))
+                  'data'=> $this->getVideoTable()->fetchById($this->params()->fromRoute('id')),
+                  'titulo' => $this->params()->fromRoute('id')
                 ));
     }
 
     public function categoryAction()
     {
-        return new ViewModel();
+      // grab the paginator from the AlbumTable
+      $paginator = $this->getVideoTable()->fetchByCategory(true);
+      // set the current page to what has been passed in query string, or to 1 if none set
+      $paginator->setCurrentPageNumber((int) $this->params()->fromQuery('page', 1));
+      // set the number of items per page to 10
+      $paginator->setItemCountPerPage(6);
+
+      return new ViewModel(array(
+          'paginator' => $paginator
+      ));
     }
 
 
