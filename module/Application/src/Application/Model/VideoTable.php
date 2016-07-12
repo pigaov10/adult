@@ -44,27 +44,11 @@ class VideoTable
         return $resultSet;
     }
 
-    public function fetchByCategory($category,$paginated=false)
+    public function fetchByCategory($category)
     {
-      if ($paginated) {
-           // create a new Select object for the table album
-           $select = new Select('video');
-           // create a new result set based on the Album entity
-           $resultSetPrototype = new ResultSet();
-           $resultSetPrototype->setArrayObjectPrototype(new Video());
-           // create a new pagination adapter object
-           $paginatorAdapter = new DbSelect(
-               // our configured select object
-               $select,
-               // the adapter to run it against
-               $this->tableGateway->getAdapter(),
-               // the result set to hydrate
-               $resultSetPrototype
-           );
-           $paginator = new Paginator($paginatorAdapter);
-           return $paginator;
-       }
-       $resultSet = $this->tableGateway->select(array('category' => 'loiras'));
-       return $resultSet;
+      //$where = new Where();
+      //$where->equalTo('name', $id);
+      $resultSet = $this->tableGateway->select(array('category' => $category));
+      return $resultSet;
     }
 }
