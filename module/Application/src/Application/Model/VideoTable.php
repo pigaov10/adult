@@ -46,7 +46,8 @@ class VideoTable
 
     public function fetchByCategory($category)
     {
-      if ($paginated == false) {
+      $paginated = false;
+      if ($paginated) {
            // create a new Select object for the table album
            $select = new Select('video');
            // create a new result set based on the Album entity
