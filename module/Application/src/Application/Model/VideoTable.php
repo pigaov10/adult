@@ -57,7 +57,7 @@ class VideoTable
       //$where->equalTo('name', $id);
 
       $sql = "SELECT * FROM video ORDER BY RAND() LIMIT 3";
-      $resultSet = $adapter->query($sql, \Zend\Db\Adapter\Adapter::QUERY_MODE_EXECUTE);
+      $resultSet = $this->tableGateway->getAdapter()->driver->getConnection()->execute($sql);
       return $resultSet;
     }
 }
