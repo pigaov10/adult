@@ -4,15 +4,8 @@
     <head>
         <meta name="ero_verify" content="ec74b5727402749048f82a51a38cd8ca" />
         <meta charset="utf-8">
-        <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="http://www.tocadasnovinhas.com.br/">Toca das Novinhas</a>
-          </div>
+        <?php echo $this->headTitle(''. $this->translate('Toca das Novinhas'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
         <?php echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
             ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
@@ -49,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Toca das Novinhas</a>
+                <a class="navbar-brand" href="http://www.tocadasnovinhas.com.br/">Toca das Novinhas</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
