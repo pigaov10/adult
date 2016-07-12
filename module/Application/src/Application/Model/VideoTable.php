@@ -43,4 +43,12 @@ class VideoTable
         $resultSet = $this->tableGateway->select(array('name' => $id));
         return $resultSet;
     }
+
+    public function fetchByCategory($category)
+    {
+        //$where = new Where();
+        //$where->equalTo('name', $id);
+        $resultSet = $this->tableGateway->select(array('category' => $category));
+        return $resultSet;
+    }
 }

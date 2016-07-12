@@ -36,13 +36,17 @@ class IndexController extends AbstractActionController
     public function detailAction()
     {
         return new ViewModel(array(
-                  'data'=> $this->getVideoTable()->fetchById($this->params()->fromRoute('id'))
+                  'data'=> $this->getVideoTable()->fetchById($this->params()->fromRoute('id')),
+                  'titulo' => $this->params()->fromRoute('id')
                 ));
     }
 
     public function categoryAction()
     {
-        return new ViewModel();
+      return new ViewModel(array(
+                'data'=> $this->getVideoTable()->fetchByCategory($this->params()->fromRoute('id')),
+                'titulo' => $this->params()->fromRoute('id')
+              ));
     }
 
 
