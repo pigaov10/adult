@@ -43,6 +43,7 @@ class IndexController extends AbstractActionController
 
     public function categoryAction()
     {
+      var_dump($this->params()->fromRoute('id'));
       // grab the paginator from the AlbumTable
       $paginator = $this->getVideoTable()->fetchByCategory($this->params()->fromRoute('id'));
       // set the current page to what has been passed in query string, or to 1 if none set
