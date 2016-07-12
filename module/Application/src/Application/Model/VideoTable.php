@@ -44,9 +44,8 @@ class VideoTable
         return $resultSet;
     }
 
-    public function fetchByCategory($category)
+    public function fetchByCategory($category,$paginated=false)
     {
-      $paginated = false;
       if ($paginated) {
            // create a new Select object for the table album
            $select = new Select('video');
