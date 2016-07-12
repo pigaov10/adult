@@ -57,7 +57,7 @@ class VideoTable
       //$where->equalTo('name', $id);
 
       $sql = "SELECT * FROM video ORDER BY RAND() LIMIT 3";
-      $resultSet = $this->tableGateway->getAdapter()->driver->getConnection()->execute($sql);
+      $resultSet = $this->tableGateway->getAdapter()->driver->getConnection()->execute($sql)->toArray();
       return $resultSet;
     }
 }
