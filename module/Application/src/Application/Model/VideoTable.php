@@ -53,9 +53,11 @@ class VideoTable
     }
     public function fetchRandomVideos()
     {
-      //$where = new Where();
-      //$where->equalTo('name', $id);
-      $resultSet = $this->tableGateway->select()->limit(3);
+      $resultSet = $this->tableGateway->select(function(Select $select){
+          $select
+              ->limit(3)
+              ->offset(3);
+      });
       return $resultSet;
     }
 }
