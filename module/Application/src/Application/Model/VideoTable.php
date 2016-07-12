@@ -64,7 +64,7 @@ class VideoTable
            $paginator = new Paginator($paginatorAdapter);
            return $paginator;
        }
-       $resultSet = $this->tableGateway->select(array('category' => $category));
+       $resultSet = $this->tableGateway->select(array('category' => 'loiras'));
        return $resultSet;
     }
 }
