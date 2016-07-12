@@ -37,7 +37,8 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel(array(
                   'data'=> $this->getVideoTable()->fetchById($this->params()->fromRoute('id')),
-                  'titulo' => $this->params()->fromRoute('id')
+                  'titulo' => $this->params()->fromRoute('id'),
+                  'relacionado' => $this->getVideoTable()->fetchRandomVideos()
                 ));
     }
 

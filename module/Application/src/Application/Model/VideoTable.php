@@ -51,4 +51,13 @@ class VideoTable
       $resultSet = $this->tableGateway->select(array('category' => $category));
       return $resultSet;
     }
+    public function fetchRandomVideos()
+    {
+      //$where = new Where();
+      //$where->equalTo('name', $id);
+      $resultSet = $adapter->query($sql, \Zend\Db\Adapter\Adapter::QUERY_MODE_EXECUTE);
+      $sql = "SELECT * FROM video ORDER BY RAND() LIMIT 3";
+      $resultSet = $adapter->query($sql);
+      return $resultSet;
+    }
 }
