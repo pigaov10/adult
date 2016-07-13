@@ -13,6 +13,8 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Application\Model\Video;
 use Application\Model\VideoTable;
+use Application\Model\Imagem;
+use Application\Model\ImagemTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
