@@ -1,9 +1,8 @@
 <main class="main-area">
 <div class="centered">
-<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a>
-</p>
-
  <?php foreach ($data as $d) : ?>
+  <?=$d->name?>
+  <hr>
   <?=$d->embed?>
 <?php endforeach; ?>
 
