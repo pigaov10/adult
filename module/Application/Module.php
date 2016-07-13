@@ -57,7 +57,7 @@ class Module
                 return new TableGateway('video', $dbAdapter, null, $resultSetPrototype);
               },
               'Application\Model\ImagemTable' =>   function($sm) {
-              $tableGateway = $sm->get('ImagemGateway');
+              $tableGateway = $sm->get('ImagemTableGateway');
               $table = new ImagemTable($tableGateway);
               return $table;
             },
