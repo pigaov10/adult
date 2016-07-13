@@ -1,20 +1,3 @@
  <?php foreach ($data as $d) : ?>
-       <small><?=$d->name?></small>
-         <?=$d->embed?>
-         <main class="main-area">
-           <div class="centered">
-             <section class="cards">
-               <article class="card">
-                 <a href="http://www.tocadasnovinhas.com.br/application/index/detail/<?=$d->name?>">
-                   <figure class="thumbnail">
-                     <img src="<?=$d->img?>" alt="meow">
-                   </figure>
-                   <div class="card-content">
-                     <span><?=$d->name?></span>
-                   </div><!-- .card-content -->
-                 </a>
-               </article><!-- .card -->
-             </section><!-- .cards -->
-          </div><!-- .centered -->
-        </main>
+  <?=$d->embed?>
 <?php endforeach; ?>
