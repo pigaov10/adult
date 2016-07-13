@@ -1,22 +1,29 @@
-<!-- Portfolio Item Heading -->
- <!-- /.row -->
  <?php foreach ($data as $d) : ?>
-   <div class="well">
        <small><?=$d->name?></small>
-        </hr>
          <?=$d->embed?>
-         <!-- Related Projects Row -->
+         <main class="main-area">
+           <div class="centered">
+             <section class="cards">
+               <article class="card">
+                 <a href="http://www.tocadasnovinhas.com.br/application/index/detail/<?=$d->name?>">
+                   <figure class="thumbnail">
+                     <img src="<?=$d->img?>" alt="meow">
+                   </figure>
+                   <div class="card-content">
+                     <span><?=$d->name?></span>
+                   </div><!-- .card-content -->
+                 </a>
+               </article><!-- .card -->
+             </section><!-- .cards -->
+          </div><!-- .centered -->
+        </main>
+<?php endforeach; ?>
 
            <h3 class="page-header">Videos relacionados</h3>
        <?php foreach ($relacionado as $r) : ?>
-       <div class="col-sm-3 col-xs-6">
            <a href="http://www.tocadasnovinhas.com.br/application/index/detail/<?=$r->name?>">
                <img class="img-responsive portfolio-item" src="<?=$r->img?>" alt="">
            </a>
           <?=$r->name?>
-       </div>
-        <?php endforeach; ?>
-
-   </div>
 
  <?php endforeach; ?>
