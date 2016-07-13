@@ -190,7 +190,6 @@ Flexbox styles
   }
   .sidebar {
     flex: 0 0 12em;
-    order: 2;
   }
   .sidebar-left {
     order: 0;
