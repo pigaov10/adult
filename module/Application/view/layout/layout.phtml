@@ -13,7 +13,8 @@
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/shop-homepage.css')
+                        // ->prependStylesheet($this->basePath() . '/css/shop-homepage.css')
+                        ->prependStylesheet($this->basePath() . '/css/main.css')
                         ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
                         ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
 
@@ -27,101 +28,81 @@
 
     </head>
     <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <!-- BEGIN EroAdvertising ADSPACE CODE -->
-      <script type="text/javascript" language="javascript" charset="utf-8" src="//adspaces.ero-advertising.com/adspace/2120107.js"></script>
-      <!-- END EroAdvertising ADSPACE CODE -->
+      <div class="outer-wrap">
+        <header class="masthead">
+          <div class="sidebar-switcher">
+            Select layout: <a href="#" class="sidebar-left-toggle"><i class="fa fa-align-left"></i><span class="screen-reader-text">Move sidebar to the left</span></a> <a href="#" class="sidebar-right-toggle"><i class="fa fa-align-right"></i><span class="screen-reader-text">Move sidebar to the right</span></a> <a href="#" class="no-sidebar-toggle"><i class="fa fa-align-justify"></i><span class="screen-reader-text">Display content vertically</span></a>  <a href="#" class="hide-sidebar-toggle"><i class="fa fa-arrow-circle-right"></i><span class="screen-reader-text">Remove sidebar</span></a>
+          </div><!-- .sidebar-switcher -->
 
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://www.tocadasnovinhas.com.br/">Toca das Novinhas</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Playboy</a>
-                    </li>
-                    <li>
-                        <a href="#">Sexy</a>
-                    </li>
-                    <li>
-                        <a href="#">Melhores da semana</a>
-                    </li>
-                    <li>
-                        <a href="#">WhatsApp</a>
-                    </li>
-                    <li>
-                        <a href="http://www.tocadasnovinhas.com.br/application/index/category/caiu-na-net">Caiu na Net</a>
-                    </li>
+        <div class="centered">
+          <div class="site-branding">
+            <h1 class="site-title">Flexbox - Full Site Demo</h1>
+          </div><!-- .site-title -->
+        </div><!-- .centered -->
+
+          <div class="main-menu">
+            <div class="nav-mixed menu">
+              <nav id="multi-level-nav" class="multi-level-nav" role="navigation">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+              </nav><!-- #multi-level-nav .multi-level-nav -->
 
-    <!-- Page Content -->
-    <div class="container">
+              <nav id="social-menu" class="social-menu" role="navigation">
+                <!-- <ul>
+                  <li><a href="https://twitter.com/bugsyAlexander"><span class="screen-reader-text">Twitter</span></a></li>
+                  <li><a href="https://github.com/bugsyAlexander"><span class="screen-reader-text">Github</span></a></li>
+                  <li><a href="https://www.linkedin.com/pub/mynor-alexander/5b/943/877"><span class="screen-reader-text">LinkedIn</span></a></li>
+                  <li><a href="http://dribbble.com"><span class="screen-reader-text">Dribbble</span></a></li>
+                  <li><a href="http://instagram.com"><span class="screen-reader-text">Instagram</span></a></li>
+                </ul> -->
+              </nav> <!-- .social-menu -->
+            </div><!-- .mixed-menu -->
+            </div><!-- main-menu -->
+          </header><!-- .masthead -->
 
-        <div class="row">
+          <div class="content">
+            <main class="main-area">
+            <div class="centered">
+              <section class="cards">
 
-            <div class="col-md-3">
-                <p class="lead">Categorias</p>
-                <div class="list-group">
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/amador" class="list-group-item">Amador</a>
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/anal" class="list-group-item">Anal</a>
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/boquete" class="list-group-item">Boquetes</a>
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/funk" class="list-group-item">Funk</a>
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/namorada" class="list-group-item">Namoradas</a>
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/novinhas" class="list-group-item">Novinhas</a>
-                    <a href="http://www.tocadasnovinhas.com.br/application/index/category/siririca" class="list-group-item">Siriricas</a>
+                <article class="card">
+                  <a href="#">
+                    <figure class="thumbnail">
+                      <img src="http://placekitten.com/808/608" alt="meow">
+                    </figure>
+                    <div class="card-content">
+                      <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi non? Recusandae, aut alias.</p>
+                    </div><!-- .card-content -->
+                  </a>
+                </article><!-- .card -->
 
-                    <!-- <a href="application/index/category/boquetes" class="list-group-item">Boquetes</a>
-                    <a href="application/index/category/celebridades" class="list-group-item">Celebridades</a>
-                    <a href="application/index/category/creampie" class="list-group-item">Creampie</a>
-                    <a href="application/index/category/camera-escondida" class="list-group-item">Câmeras escondidas</a>
-                    <a href="application/index/category/desenhos" class="list-group-item">Desenhos</a>
-                    <a href="application/index/category/gay" class="list-group-item">Gay Porn</a>
-                    <a href="application/index/category/gangbang" class="list-group-item">GangBang</a>
-                    <a href="application/index/category/latinos" class="list-group-item">Latinos</a>
-                    <a href="application/index/category/lesbicas" class="list-group-item">Lésbicas</a>
-                    <a href="application/index/category/punhetas" class="list-group-item">Punhetas</a> -->
-                </div>
-            </div>
+              </section><!-- .cards -->
+            </div><!-- .centered -->
+            </main><!-- main-area -->
 
-            <div class="col-md-9">
-              <?=$this->content;?>
-            </div>
+            <div class="sidebar">
+              <div class="squish-container">
+                <h3>Explore the other Demos:</h3>
+                <nav class="example-menu">
+                  <ul>
+                    <li><a href="http://codepen.io/bugsyAlexander/pen/xGBaaG" target="_blank">Mixed Menu</a></li>
+                    <li><a href="http://codepen.io/bugsyAlexander/pen/gpyYOo" target="_blank">Card Layout</a></li>
+                    <li><a href="http://codepen.io/bugsyAlexander/pen/OVGLmo" target="_blank">Holy Grail</a></li>
+                    <li><a href="http://codepen.io/bugsyAlexander/pen/xGNZao" target="_blank">Site Demo</a></li>
+                  </ul>
+                </nav><!-- .example-menu -->
+              </div>
+            </div><!-- .sidebar -->
+          </div><!-- .content -->
 
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-    <div class="container">
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Toca das Novinhas 2016</p>
-                </div>
-            </div>
+        <footer class="footer-area">
+          <p>&copy; 2015 Some copyright message - All rights reserved</p>
         </footer>
-
-    </div>
-    <!-- /.container -->
+      </div><!-- .outer-wrap -->
 
         <?php echo $this->inlineScript() ?>
         <!-- BEGIN EroAdvertising ADSPACE CODE -->
