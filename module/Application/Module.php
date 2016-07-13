@@ -44,23 +44,31 @@ class Module
 
     public function getServiceConfig() {
           return array(
-          'factories' => array(
-          'Application\Model\VideoTable' =>   function($sm) {
-          $tableGateway = $sm->get('VideoTableGateway');
-          $table = new VideoTable($tableGateway);
-          return $table;
-          },
-          'VideoTableGateway' => function ($sm) {
-          $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-          $resultSetPrototype = new ResultSet();
-          $resultSetPrototype->setArrayObjectPrototype(new Video());
-          return new TableGateway('video', $dbAdapter, null, $resultSetPrototype);
-          },
-          ),
+            'factories' => array(
+                'Application\Model\VideoTable' =>   function($sm) {
+                $tableGateway = $sm->get('VideoTableGateway');
+                $table = new VideoTable($tableGateway);
+                return $table;
+              },
+                'VideoTableGateway' => function ($sm) {
+                $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                $resultSetPrototype = new ResultSet();
+                $resultSetPrototype->setArrayObjectPrototype(new Video());
+                return new TableGateway('video', $dbAdapter, null, $resultSetPrototype);
+              },
+              'Application\Model\ImagemTable' =>   function($sm) {
+              $tableGateway = $sm->get('ImagemGateway');
+              $table = new ImagemTable($tableGateway);
+              return $table;
+            },
+              'ImagemTableGateway' => function ($sm) {
+              $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+              $resultSetPrototype = new ResultSet();
+              $resultSetPrototype->setArrayObjectPrototype(new Imagem());
+              return new TableGateway('imagem', $dbAdapter, null, $resultSetPrototype);
+            },
+
+            ),
           );
       }
-
-
-
-
 }
