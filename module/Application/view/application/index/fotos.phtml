@@ -1,9 +1,15 @@
-Module: Application
-Controller: Index
-Action: fotos
+<main class="main-area">
+<div class="centered">
+      <section class="cards">
+<?php foreach ($data as $d) : ?>
+      <article class="card">
+        <a href="#">
+          <div class="card-content">
+            <img src="<?=$d->link?>" />
+          </div><!-- .card-content -->
+        </a>
+      </article><!-- .card -->
 
-<?php foreach ($data as $d) { ?>
-  <img src="<?=$d->link?>" />
-  <br>
-  </hr>
-<?php } ?>
+  <?php endforeach; ?>
+</section><!-- .cards -->
+</div><!-- .centered -->
