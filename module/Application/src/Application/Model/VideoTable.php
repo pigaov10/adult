@@ -36,6 +36,7 @@ class VideoTable
        $resultSet = $this->tableGateway->select();
        return $resultSet;
     }
+
     public function fetchById($id)
     {
         //$where = new Where();
