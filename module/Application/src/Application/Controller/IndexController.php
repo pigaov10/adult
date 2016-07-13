@@ -63,7 +63,7 @@ class IndexController extends AbstractActionController
     public function fotosAction()
     {
       return new ViewModel(array(
-                      'data'=> $this->getVideoTable()->getImagemTable()
+                      'data'=> $this->getImagemTable()->fetchAll()
                     ));
     }
 
