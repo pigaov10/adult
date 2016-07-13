@@ -1,12 +1,36 @@
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+<main class="main-area">
+<div class="centered">
+      <section class="cards">
+<?php foreach ($this->paginator as $d) : ?>
+      <article class="card">
+        <a href="http://www.tocadasnovinhas.com.br/application/index/detail/<?=$d->name?>">
+          <figure class="thumbnail">
+            <img src="<?=$d->img?>" alt="meow">
+          </figure>
+          <div class="card-content">
+            <span><?=$d->name?></span>
+          </div><!-- .card-content -->
+        </a>
+      </article><!-- .card -->
+
+  <?php endforeach; ?>
+</section><!-- .cards -->
+</div><!-- .centered -->
+<center>
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+    // the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    'partial/paginator.phtml',
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'home'
+    )
+);
+?>
+</center>
+</main><!-- main-area -->
