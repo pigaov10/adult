@@ -15,7 +15,7 @@ class ImagemTable
     }
     public function fetchAll($paginated=false)
     {
-      $resultSet = $this->tableGateway->select();
+      $resultSet = $this->tableGateway->select(array('pessoa'=> 'Andressa Soares (Mulher Melancia) 1'));
       return $resultSet;
     }
 }
