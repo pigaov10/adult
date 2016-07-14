@@ -10,6 +10,7 @@ class Video{
   public $site;
   public $status;
 	public $tempo;
+	public $category;
 
 	public function exchangeArray($data){
 		$this->id = (isset($data['id'])) ? $data['id'] : null;
@@ -21,5 +22,6 @@ class Video{
 		$this->img = (isset($data['img'])) ? $data['img'] : null;
 		$this->tempo = (isset($data['img'])) ? $data['tempo'] : null;
 		$this->embed = (isset($data['embed'])) ? $data['embed'] : null;
+		$this->category = (isset($data['embed'])) ? $data['category'] : null;
 	}
 }
