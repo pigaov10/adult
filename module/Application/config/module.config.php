@@ -24,7 +24,7 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'application' => array(
+            'blog' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/application',
@@ -53,7 +53,7 @@ return array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/blog[/:action][/:id]',
+                            'route'    => '[/:action][/:id]',
                             'constraints' => array(
                                 // 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
