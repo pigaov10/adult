@@ -52,7 +52,7 @@ class IndexController extends AbstractActionController
                         ));
     }
 
-    public function categoryAction()
+    public function categoriaAction()
     {
         return new ViewModel(array(
                         'data'=> $this->getVideoTable()->fetchByCategory($this->params()->fromRoute('id')),
