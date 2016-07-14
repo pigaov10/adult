@@ -43,7 +43,7 @@ class IndexController extends AbstractActionController
               ));
     }
 
-    public function detailAction()
+    public function videosAction()
     {
         return new ViewModel(array(
                           'data'=> $this->getVideoTable()->fetchById($this->params()->fromRoute('id')),
