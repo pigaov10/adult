@@ -71,8 +71,7 @@ return array(
                                 'page' => 'd+'
                             ),
                             'defaults' => array(
-                                'action' => 'index',
-                                'page' => 1
+
                             ),
                         ),
                     ),
