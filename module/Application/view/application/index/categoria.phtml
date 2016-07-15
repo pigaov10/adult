@@ -7,8 +7,11 @@
           <figure class="thumbnail">
             <img src="<?=$d->img?>" alt="meow">
           </figure>
-          <div class="card-content">
-            <h5><?=$d->description?></h5>
+          <div class="card-content" style="padding:0.5em !important">
+            <span style="color:rgb(9, 158, 30);font-size:13px"><?=strtoupper($d->category)?></span>
+            <br>
+            <span style="color:gray; text-decoration: underline;
+    font-size: 0.9em;"><?=$d->description?></span>
           </div><!-- .card-content -->
         </a>
       </article><!-- .card -->
