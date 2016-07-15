@@ -27,7 +27,7 @@ return array(
             'blog' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/blog[/:action]',
+                    'route'    => '/blog',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller'    => 'Index',
@@ -53,7 +53,7 @@ return array(
                     'default' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '[/:id]',
+                            'route'    => '[/:action][/:id]',
                             'constraints' => array(
                                 // 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
@@ -65,7 +65,7 @@ return array(
                     'paginator' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => '[/page/:page]',
+                            'route' => '[/:action[/page/:page]]',
                             'constraints' => array(
                                 'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'page' => 'd+'
