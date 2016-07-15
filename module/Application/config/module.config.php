@@ -65,7 +65,7 @@ return array(
                     'paginator' => array(
                         'type' => 'Segment',
                         'options' => array(
-                            'route' => '[/:action[/page/:page]]',
+                            'route' => '[/:action]',
                             'constraints' => array(
                                 'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'page' => 'd+'
