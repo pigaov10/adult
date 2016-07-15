@@ -1,7 +1,7 @@
 <main class="main-area">
 <div class="centered">
       <section class="cards">
-<?php foreach ($data as $d) : ?>
+<?php foreach ($this->paginator as $d) : ?>
       <article class="card">
         <a href="#">
           <div class="card-content">
@@ -15,3 +15,21 @@
   <?php endforeach; ?>
 </section><!-- .cards -->
 </div><!-- .centered -->
+<center>
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+    // the paginator object
+    $this->paginator,
+    // the scrolling style
+    'sliding',
+    // the partial to use to render the control
+    'partial/paginator.phtml',
+    // the route to link to when a user clicks a control link
+    array(
+        'route' => 'home'
+    )
+);
+?>
+</center>
+</main>
