@@ -70,7 +70,8 @@ class IndexController extends AbstractActionController
         $paginator->setItemCountPerPage(6);
 
         return new ViewModel(array(
-            'paginator' => $paginator
+            'paginator' => $paginator,
+            'link' => $matches->getParam('action')
         ));
     }
 
