@@ -18,6 +18,6 @@ content = urllib2.urlopen(sites[0]).read()
 
 soup = BeautifulSoup(content)
 
-for video in soup.find("div",{"class":"phimage"}):
+for video in soup.find("ul",{"class":"videos"}):
     print video.find("a")
     print "----------"
