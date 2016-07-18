@@ -4,6 +4,7 @@ import json
 import re
 from urllib import urlencode
 import urllib
+import urllib2
 from urllib2 import HTTPCookieProcessor
 from urllib2 import HTTPError
 from urllib2 import ProxyHandler
