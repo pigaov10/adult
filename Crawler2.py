@@ -38,15 +38,15 @@ for video in soup.find("ul",{"class":"videos"}):
         href = video['href']
         tempo = video.contents[0]
         print href
-        # pornolandia = sites[0].split('/')[2]
+        hub = href.split('=')[1]
         # siteDetalhes = ''.join([pornolandia,href])
         #
-        # iframe = '<iframe src="http://www.pornhub.com/embed/'++'" frameborder="0" width="560" height="340" scrolling="no"></iframe>'
+        iframe = '<iframe src="http://www.pornhub.com/embed/'+hub+'" frameborder="0" width="560" height="340" scrolling="no"></iframe>'
         #
         #
-        # x = conn.cursor()
-        # try:
-        #     x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,divDetalhes,'loiras',tempo))
-        #     conn.commit()
-        # except:
-        #     conn.rollback()
+        x = conn.cursor()
+        try:
+            x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,iframe,'loiras',tempo))
+            conn.commit()
+        except:
+            conn.rollback()
