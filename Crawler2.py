@@ -42,7 +42,7 @@ for video in soup.find("ul",{"class":"videos"}):
         sock = urllib.urlopen("http://"+siteDetalhes)
         htmlSource = sock.read()
         soup = BeautifulSoup(htmlSource)
-        for i in soup.find("iframe",{"frameborder":"0"}):
+        for i in soup.findAll("iframe",{"frameborder":"0"}):
             print i
         # for detalhes in divDetalhes:
         #     inputs = detalhes.find("input")
