@@ -42,8 +42,8 @@ for video in soup.find("ul",{"class":"videos"}):
         sock = urllib.urlopen("http://"+siteDetalhes)
         htmlSource = sock.read()
         soup = BeautifulSoup(htmlSource)
-        for i in soup.findAll("iframe",{"frameborder":"0"}):
-            print i
+        for i in soup.findAll("div",{"class":"video-action-sub-tab"}):
+            print i.find("iframe")
         # for detalhes in divDetalhes:
         #     inputs = detalhes.find("input")
         #     embed =  inputs.get('value')
