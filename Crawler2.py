@@ -37,16 +37,12 @@ for video in soup.find("ul",{"class":"videos"}):
         thumb = img['data-mediumthumb']
         href = video['href']
         tempo = video.contents[0]
-        pornolandia = sites[0].split('/')[2]
-        siteDetalhes = ''.join([pornolandia,href])
-        sock = urllib.urlopen("http://"+siteDetalhes)
-        htmlSource = sock.read()
-        soup = BeautifulSoup(htmlSource)
-        for i in soup.findAll("div",{"class":"video-action-sub-tab"}):
-            print i.find("textarea")
-        # for detalhes in divDetalhes:
-        #     inputs = detalhes.find("input")
-        #     embed =  inputs.get('value')
+        print href
+        # pornolandia = sites[0].split('/')[2]
+        # siteDetalhes = ''.join([pornolandia,href])
+        #
+        # iframe = '<iframe src="http://www.pornhub.com/embed/'++'" frameborder="0" width="560" height="340" scrolling="no"></iframe>'
+        #
         #
         # x = conn.cursor()
         # try:
