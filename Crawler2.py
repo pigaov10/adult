@@ -43,7 +43,7 @@ for video in soup.find("ul",{"class":"videos"}):
         htmlSource = sock.read()
         soup = BeautifulSoup(htmlSource)
         for i in soup.findAll("div",{"class":"video-action-sub-tab"}):
-            print i.find("iframe")
+            print i.find("textarea")
         # for detalhes in divDetalhes:
         #     inputs = detalhes.find("input")
         #     embed =  inputs.get('value')
