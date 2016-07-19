@@ -42,15 +42,15 @@ for video in soup.find("ul",{"class":"videos"}):
         sock = urllib.urlopen("http://"+siteDetalhes)
         htmlSource = sock.read()
         soup = BeautifulSoup(htmlSource)
-        for i in soup.find("iframe",{"frameborder":"0"})
-        print i
+        for i in soup.find("iframe",{"frameborder":"0"}):
+            print i
         # for detalhes in divDetalhes:
         #     inputs = detalhes.find("input")
         #     embed =  inputs.get('value')
         #
-        x = conn.cursor()
-        try:
-            x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,divDetalhes,'loiras',tempo))
-            conn.commit()
-        except:
-            conn.rollback()
+        # x = conn.cursor()
+        # try:
+        #     x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,divDetalhes,'loiras',tempo))
+        #     conn.commit()
+        # except:
+        #     conn.rollback()
