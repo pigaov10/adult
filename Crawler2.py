@@ -42,7 +42,7 @@ for video in soup.find("ul",{"class":"videos"}):
         sock = urllib.urlopen("http://"+siteDetalhes)
         htmlSource = sock.read()
         soup = BeautifulSoup(htmlSource)
-        divDetalhes = soup.find("textarea")
+        divDetalhes = soup.find("textarea",{"onclick":"this.select()"})
         print divDetalhes
         # for detalhes in divDetalhes:
         #     inputs = detalhes.find("input")
