@@ -43,7 +43,7 @@ for video in soup.find("ul",{"class":"videos"}):
         htmlSource = sock.read()
         soup = BeautifulSoup(htmlSource)
         divDetalhes = soup.find("textarea",{"onclick":"this.select()"})
-        print divDetalhes
+        print divDetalhes.contents
         # for detalhes in divDetalhes:
         #     inputs = detalhes.find("input")
         #     embed =  inputs.get('value')
