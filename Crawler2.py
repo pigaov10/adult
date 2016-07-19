@@ -48,9 +48,9 @@ for video in soup.find("ul",{"class":"videos"}):
         #     inputs = detalhes.find("input")
         #     embed =  inputs.get('value')
         #
-        # x = conn.cursor()
-        # try:
-        #     x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,'','loiras',tempo))
-        #     conn.commit()
-        # except:
-        #     conn.rollback()
+        x = conn.cursor()
+        try:
+            x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,divDetalhes,'loiras',tempo))
+            conn.commit()
+        except:
+            conn.rollback()
