@@ -16,8 +16,10 @@ import MySQLdb
 
 default_header = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0',}
 
+CATEGORIA = ''
+
 sites = [
-     'http://www.pornhub.com/video/search?search=amador',
+     'http://www.pornhub.com/video/search?search='+CATEGORIA,
     # 'http://www.hellxx.com/index.php?module=videos&tag=d',
     # 'http://www.redtube.com/?search=s',
     # 'http://pt.xhamster.com/search.php?from=&new=&q=asasaa&qcat=video',
@@ -46,7 +48,7 @@ for video in soup.find("ul",{"class":"videos"}):
         #
         x = conn.cursor()
         try:
-            x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,iframe,'amador',tempo))
+            x.execute("""INSERT INTO video (name,description,img,embed,category,tempo) VALUES (%s,%s,%s,%s,%s,%s)""",(alt.lower().replace(" ","-"),alt,thumb,iframe,CATEGORIA,tempo))
             conn.commit()
         except:
             conn.rollback()
